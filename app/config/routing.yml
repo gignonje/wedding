@@ -1,0 +1,5 @@
+shadow_wedding:
+    resource: "@ShadowWeddingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
