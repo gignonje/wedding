@@ -1,23 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="fr"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <title>Mariage Frank et Claire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        <title>{% block title %}{% endblock %}</title>
 
-    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
-    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+        {% block stylesheets %}
+            {% stylesheets
+            'bundles/shadowwedding/styles/style.css'
+            'bundles/shadowwedding/styles/layout.css'
+            'bundles/shadowwedding/styles/color.css'
+            'bundles/shadowwedding/styles/flexslider.css'
+            filter='cssrewrite'
+            %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
 
-</head>
+        <link href="{{ asset('bundles/shadowwedding/images/favicon.ico') }}" rel="shortcut icon" />
 
-<body>
-<h1>Hello !</h1>
+    </head>
 
-<!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-<script src="{{ asset('js/jquery.js') }}"></script>
-<!-- Include all JavaScripts, compiled by Assetic -->
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-</body>
+    <body id="bodychild">
+    {% block body %}
+        {% block header %}
+            {% include 'ShadowWeddingBundle::header.html.twig' %}
+        {% endblock %}
+        {% block footer %}
+            {% include 'ShadowWeddingBundle::footer.html.twig' %}
+        {% endblock %}
+        {% block javascripts %}
+            {% javascripts
+            '@ShadowWeddingBundle/Resources/public/js/jquery-1.11.1.min.js'
+            '@ShadowWeddingBundle/Resources/public/js/jquery-migrate-1.2.1.min.js'
+            '@ShadowWeddingBundle/Resources/public/js/hoverIntent.js'
+            '@ShadowWeddingBundle/Resources/public/js/superfish.js'
+            '@ShadowWeddingBundle/Resources/public/js/supersubs.js'
+            '@ShadowWeddingBundle/Resources/public/js/tinynav.min.js'
+            '@ShadowWeddingBundle/Resources/public/js/custom.js'
+            '@ShadowWeddingBundle/Resources/public/js/jquery.flexslider-min.js'
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            <script>
+                document.createElement('header');
+                document.createElement('section');
+                document.createElement('article');
+                document.createElement('aside');
+                document.createElement('nav');
+                document.createElement('footer');
+            </script>
+        {% endblock %}
+    {% endblock %}
+    </body>
 </html>

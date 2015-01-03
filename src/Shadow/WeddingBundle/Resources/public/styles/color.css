@@ -1,0 +1,370 @@
+/* 
+
+Sweetly - CSS File
+
+CHANGE COLOR STYLE
+
+*/
+
+body {color:#969696;}
+#bodychild { background-color:#ffffff;}
+
+/*============================================== GENERAL SECTION ==============================================*/
+/* Link color */
+a, .colortext{olor:#eab254;}
+a:hover, a.colortext:hover, .colortext a:hover{color:#969696}
+#logo h1 a, #logo h1 a:visited{color:#fff;}
+#logo .desc{ color:#fff; }
+
+img.circleimg{background-color:#5e5a46;}
+
+/* Heading & text */
+h1, h2, h3, h4, h5, h6{color:#907c73;}
+.pagetitle{color:#907c73;}
+
+
+/*============================================== HEADER AND MENU SECTION ==============================================*/
+#outerheader{  background:#786258 url(../images/pattern.png)}
+.sf-menu a, .sf-menu a:visited{color:#e6e0dd;}/* 1st level */
+.sf-menu a:hover, .sf-menu li.current a{color:#eab254;}/* 1st level */
+
+
+
+/* 2nd level */
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	background:url(../images/arrow-dropdown.png) no-repeat 0 0px;
+	color:#e6e0dd;
+}
+
+.sf-menu li ul ul{ background-image:none!important;}
+.sf-menu li li li:first-child{ border:0px;}
+.sf-menu li:hover ul ul,
+.sf-menu li.sfHover ul ul {
+	border-top:0px;
+}
+
+.sf-menu li li{background:#907c73; border-top:1px solid #a4938b;}
+.sf-menu li li:first-child{ border-top:3px solid #eab254;}
+
+.sf-menu li li a, .sf-menu li li a:visited { color:#e6e0dd!important;}
+.sf-menu li li a:hover, sf-menu li.current li a{color:#eab254!important;}
+
+
+.tinynav{background:#fff; border:1px solid #fff;}
+
+
+
+/*============================================== SLIDER SECTION ==============================================*/
+#slider .camera_caption .slider-title, #slider .camera_caption .slider-title a, #slider .camera_caption .slider-subtitle{color:#907c73;}
+#slider .slider-desc{color:#907c73;}
+#slider {background:#f9f9f9; }
+#slider .camera_wrap .camera_pag .camera_pag_ul{
+	border-bottom: 60px solid #f9f9f9;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	height: 0;
+	display:inline-block;
+}
+#slider .camera_caption > div{ background:transparent; }
+#slider .camera_prevThumbs, #slider .camera_nextThumbs, #slider .camera_prev, #slider .camera_next, #slider .camera_commands, #slider .camera_thumbs_cont {
+    background: none ;
+}
+
+#slider .camera_wrap .camera_pag .camera_pag_ul li {
+	background: #f9f9f9;
+	border:1px solid #f9f9f9;
+}
+#slider .camera_wrap .camera_pag .camera_pag_ul li > span {
+	background: #907c73;
+}
+
+#slider .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent,
+#slider .camera_wrap .camera_pag .camera_pag_ul li:hover {
+	background: #fff;
+	border:1px solid #d8ccc5;
+}
+#slider .camera_wrap .camera_pag .camera_pag_ul li:hover > span,
+#slider .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
+	background: #c34d5f;
+}
+
+/*============================================== AFTER HEADER SECTION ==============================================*/
+#outerafterheader{ background:#f9f9f9 url(../images/header1.jpg) repeat-x center top;}
+#afterheader .pagetitle{ background:url(../images/icon.png) no-repeat center bottom; }
+#afterheader #trapezoid {
+	border-bottom: 60px solid #f9f9f9;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	height: 0;
+	display:inline-block;
+}
+.header-line{background-color:#f9f9f9;}
+
+
+/*============================================== CONTENT SECTION ==============================================*/
+/* Images */
+.frame, .entry-video .mediacontainer{border:15px solid #f0f0f0;}
+
+/* Blockquote  */
+blockquote { border-left:5px solid #d8ccc5; background:#f9f6f4}
+
+/* Form */
+input[type="text"], input[type="email"],
+textarea, input[type="password"], select{
+	border:solid 2px #d8ccc5;
+	background:#fff;
+	color:#969696;
+}
+label{ color:#333;}
+span.required{ color:#f00;}
+
+/* Horizontal Line */
+hr {
+	color:#eaeaea;
+	background-color:#eaeaea;
+}
+
+.separator{ 
+	border-bottom: 1px solid #e3e3e3;
+
+}
+
+
+
+/* Tabs 
+.tabcontainer{ border-bottom:1px solid #eee}
+ul.tabs {
+	color:#808080;
+	border-bottom:1px solid #eee;
+}
+
+ul.tabs li:first-child{ border-left:0px} 
+ul.tabs li a {color:#333;}
+ul.tabs li.active{
+	color:#808080;
+	border:1px solid #eee;
+	border-bottom:1px solid #fff;
+}
+html ul.tabs li.active a{ color:#808080; }
+.tab-body{ border:0px;}
+*/
+
+
+/* Button */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.comment-body .time .comment-reply-link {
+	background: #d16676; 
+	color:#fff;
+	
+}
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.comment-body .time .comment-reply-link:hover {
+	background: #969696; 
+	color:#fff;
+}
+
+
+/* Code */
+code {
+	border-left:4px solid #e9e9e9;
+}
+
+/* Tables */
+th{border-bottom: 1px solid #f1f1f1;}
+table {border: 1px solid #f1f1f1;border-bottom:0;}
+tr td {border-bottom: 1px solid #f1f1f1;}
+tr.odd td {background: #F2F7FC;}
+
+
+/*============================================== BLOG SECTION ==============================================*/
+.posttitle a, .posttitle a:visited{color:#907c73;}
+.posttitle a:hover{color:#eab254;}
+
+.date-wrap{ color:#907c73}
+.date-wrap .line{ background:#e5e1e1}
+
+
+.postimg{border:1px solid #f0f0f0}
+.postimg:hover{ border:1px solid #d8ccc5;}
+.thumbcontainer, #postgallery{border:14px solid #f0f0f0;}
+
+.single #postgallery, .single .postimg.audio, .single .postimg.audio .thumbcontainer{ border:0px;}
+
+#singlepost .post{
+	border-bottom: 0px solid #d8ccc5;
+}
+
+.entry-comment{ background:#303030;}
+.entry-comment a, entry-comment a:visited{color:#fff}
+.comment-body .time, .comment-body .time a, .comment-body .time a:visited{color:#969696;}
+.comment-body .time a:hover{color:#eab254;}
+
+.entry-utility{ 
+	color:#969696;
+}
+.entry-utility .user, .entry-utility .tag, .entry-utility .comment{}
+.entry-utility, .entry-utility a{color:#969696}
+.entry-utility a:hover{ text-decoration:none; color:#eab254}
+
+.fn{color:#969696;}
+.fn a, .fn a:visited{ color:#969696}
+.fn a:hover{color:#eab254}
+.tdate{color:#969696; }
+.reply a{  background: #D16676;  color: #FFFFFF;}
+.reply a:hover{background: #969696;  color: #FFFFFF;}
+
+#entry-author-info{border-top: 1px solid #d8ccc5; border-bottom: 1px solid #d8ccc5;}
+.avatar{}
+
+.author{ color:#907c73}
+
+.nav-previous a, .nav-next a {color: #EAB254;}
+.nav-previous a:hover, .nav-next a:hover{ color:#969696}
+
+/* Entry Gallery */
+article ul.flex-direction-nav a{background-color:#625a4b;}
+article ul.flex-direction-nav a.flex-prev{background-image:url(../images/gallery-prev.png); background-position:center;}
+article ul.flex-direction-nav a.flex-next{background-image:url(../images/gallery-next.png); background-position:center;}
+article ul.flex-direction-nav a.flex-prev:hover{background-image:url(../images/gallery-prev-hover.png); background-position:center;}
+article ul.flex-direction-nav a.flex-next:hover{background-image:url(../images/gallery-next-hover.png); background-position:center;}
+article .flexslider:hover .flex-next:hover, article .flexslider:hover .flex-prev:hover{background-color:#625a4b;}
+
+/* tag-items */
+.tagcloud a,
+.tag-items span a{ background:#f0f0f0; color:#969696}
+.tagcloud a:hover,
+.tag-items span a:hover, .tag-items span .active{color:#fff!important; background:#c34d5f}
+
+.page-links a span { background:#f0f0f0; color:#969696}
+.page-links span:hover{color:#fff; background:#c34d5f}
+.page-links span{color:#fff; background:#c34d5f}
+
+/* WP Pagenavi */
+.wp-pagenavi{}
+.wp-pagenavi .pages{color:#907c73; }
+.wp-pagenavi a, .wp-pagenavi a:visited{color:#907c73; background:#d8ccc5;}
+.wp-pagenavi .current, .wp-pagenavi a:hover{ background:#d16676; color:#fff;}
+
+
+/* WIDGET CUSTOM
+-------------------------------------------------------------- */
+/* Bottomline*/
+.bottomline{border-color:#e7e7e7;}
+/* Bottom */
+#outerbottom{ background: url(../images/pattern-bottom.png)}
+
+.widget-title{
+ 	background: url(../images/icon.png) no-repeat center bottom;
+}
+
+
+/*======== Testimonials ========*/
+.ts-testimonial-widget .testi-quote{ border:2px solid #f0f0f0; background:#fff; color:#969696  }
+.testi-arrow{background: url(../images/arrow-testi.png) no-repeat}
+.ts-testimonial-widget .testi-thumb img{ border: 15px solid #f0f0f0;}
+.testi-tag{ color:#eab254}
+
+/*======== Recent Posts ========*/
+.rp-widget .recent-thumb{border:5px solid #f0f0f0;}
+.rp-widget .recent-title a, .rp-widget .recent-title a:visited{color:#907c73!important;}
+.rp-widget .recent-title a:hover{color:#eab254!important;}
+.rp-widget .smalldate{ color:#969696}
+
+
+/*======== Team =========*/
+.ts-team-widget .team-title, .ts-team-widget .team-title a{color:#969696;}
+.ts-team-widget .team-title a:hover{color:#eab254}
+.ts-team-widget .item-container{ background:#f0f0f0; color:#969696 }
+.ts-team-widget .team-tag{ color:#eab254}
+
+
+/*======== FEATURE SECTION =========*/
+.ts-features .feature-title, .ts-features .feature-title a, .ts-features .feature-title a:visited{color:#907c73;}
+.ts-features .feature-title a:hover{color:#eab254}
+.ts-features .img-container{border: 14px solid #f0f0f0;}
+.ts-features .feature-img{border:1px solid #f0f0f0;}
+.ts-features .feature-img:hover{border:1px solid #907c73}
+
+/*======== PORTFOLIO SECTION ========*/
+
+#filter li a{
+	 color:#907c73;
+}
+#filter li.current a, #filter li a:hover{
+	color:#fff; background:#d16676
+}
+#filter li {
+    position: relative;
+    z-index: 10;
+}
+
+.ts-pf-img .thumbcontainer{border:14px solid #f0f0f0!important;}
+.ts-pf-img{border:1px solid #f0f0f0}
+.ts-pf-img:hover{ border:1px solid #d8ccc5!important;}
+
+
+/* text item */
+.ts-pf-text .pftitle{border-color:#e7e7e7;}
+.ts-pf-text .pftitle, 
+.ts-pf-text .pftitle a{
+	color:#907c73;
+} 
+
+.ts-pf-text .pftitle a:hover{
+	color:#eab254;
+} 
+
+
+
+/*============================================== SIDEBAR SECTION ==============================================*/
+#sidebar .widget-title {color:#907c73; background: url(../images/icon2.png) no-repeat 0 3px}
+
+#sidebar li li{	border-bottom: 1px solid #f0f0f0;}
+#sidebar li, #sidebar li a, #sidebar li li a{color:#969696;}
+#sidebar li a:hover, #sidebar li li a:hover, #sidebar li li a.current{color:#eab254;}
+
+#sidebar ul.sub-menu li, #sidebar ul.children li, #sidebar ul ul ul li{border-top: 1px solid #f0f0f0; border-bottom:0px}
+
+
+/* Search */
+#searchform .searcharea{background:#fff; border:solid 1px #625a4b; border-width:1px 1px 1px 1px;}
+input.searchbutton{background:url(images/search-icon.png) no-repeat !important; }
+input.searchbutton:hover{ background-color:transparent; border:0px;}
+
+
+/*============================================== FOOTER SIDEBAR SECTION ==============================================*/
+#outerfootersidebar{  color:#e6e0dd; background:#786258 url(../images/pattern.png) }
+#footersidebar li li{ border-bottom:1px solid #a4938b; }
+#footersidebar .widget-title{color:#e6e0dd; background: url(../images/icon3.png) no-repeat 0 3px}
+#footersidebar li a, #footersidebar li a:visited{color:#e6e0dd}
+#footersidebar li a:hover{color:#fff}
+
+#footersidebar h1, #footersidebar h2, #footersidebar h3, #footersidebar h4, #footersidebar h5, #footersidebar h6{color:#e6e0dd;}
+
+/*============================================== FOOTER SECTION ==============================================*/
+#outercopyright{ background:#786258 url(../images/pattern.png)}
+#copyright-wrap{color:#e6e0dd; border-top:1px solid #a4938b;}
+#outercopyright a{color:#fff;}
+#outercopyright a:hover{ color:#e6e0dd;}
+
+
+/* Social */
+.icon-img.twitter{background:#e6e0dd url(../images/social/twitter.png)}
+.icon-img.facebook{background:#e6e0dd url(../images/social/fb.png)}
+.icon-img.google{background:#e6e0dd url(../images/social/g+.png)}
+.icon-img.pinterest{background:#e6e0dd url(../images/social/pint.png)}
+
+
+.icon-img.twitter:hover{background:#d8d7d6 url(../images/social/twitter.png)}
+.icon-img.facebook:hover{background:#d8d7d6 url(../images/social/fb.png)}
+.icon-img.google:hover{background:#d8d7d6 url(../images/social/g+.png)}
+.icon-img.pinterest:hover{background:#d8d7d6 url(../images/social/pint.png)}
