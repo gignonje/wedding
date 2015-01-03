@@ -35,7 +35,8 @@
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery":  "1.11.*",
         "kriswallsmith/assetic": "1.2.*@dev",
-        "friendsofsymfony/user-bundle": "~1.3"
+        "friendsofsymfony/user-bundle": "~1.3",
+        "knplabs/knp-menu-bundle": "~2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
