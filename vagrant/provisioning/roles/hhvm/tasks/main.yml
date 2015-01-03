@@ -1,0 +1,11 @@
+---
+- name: Add hhvm keys
+  apt_key:
+    url=http://dl.hhvm.com/conf/hhvm.gpg.key
+    state=present
+
+- name: Add repo for hhvm
+  apt_repository: repo='deb http://dl.hhvm.com/debian wheezy main' state=present
+
+- name: apt | install hhvm
+  apt: pkg=hhvm update_cache=yes

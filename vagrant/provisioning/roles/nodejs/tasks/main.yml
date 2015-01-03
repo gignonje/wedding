@@ -1,0 +1,33 @@
+---
+
+- name: apt | build tools for nodejs
+  apt: pkg={{ item }}
+  with_items:
+    - python
+    - checkinstall
+    - build-essential
+    - curl
+
+- name: Add Nodesource Keys
+  apt_key:
+    url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state=present
+
+- name: Add Nodesource Apt Sources List Deb
+  apt_repository:
+    repo='deb https://deb.nodesource.com/node {{ ansible_distribution_release }} main'
+    state=present
+
+- name: Add Nodesource Apt Sources List Deb Src
+  apt_repository:
+    repo='deb-src https://deb.nodesource.com/node {{ ansible_distribution_release }} main'
+    state=present
+
+- name: Install NodeJS
+  apt: pkg=nodejs state=latest update_cache=true
+
+- name: Install grunt and bower
+  npm: name={{ item }} global=yes
+  with_items:
+    - bower
+    - grunt-cli

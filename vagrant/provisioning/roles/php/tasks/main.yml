@@ -1,0 +1,16 @@
+---
+
+- name: install php 5.5
+  include: 55.yml
+
+- name: config php
+  include: config.yml
+
+- name: install composer
+  include: composer.yml
+
+- name: Install global vendor with composer
+  command: composer global require {{ item }}
+  with_items:
+    - fabpot/php-cs-fixer:@stable
+  tags: composer

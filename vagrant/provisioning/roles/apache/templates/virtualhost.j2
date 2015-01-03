@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+<VirtualHost {{ interfaces|default('*') }}:{{ port|default('80') }}>
+    ServerName {{ item.servername }}
+
+    DocumentRoot /var/www/{{ item.documentrootdir }}
+    <Directory /var/www/{{ item.documentrootdir }}>
+        Options -Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
+
+    SetEnv VAGRANT VAGRANT
+
+    CustomLog ${APACHE_LOG_DIR}/access_{{ item.name }}.log combined
+    ErrorLog ${APACHE_LOG_DIR}/error_{{ item.name }}.log
+</VirtualHost>

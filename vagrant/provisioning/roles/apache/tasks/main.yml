@@ -1,0 +1,31 @@
+---
+
+- name: apt | install apache2 npm worker
+  apt: pkg=apache2-mpm-worker state=installed
+
+- name: apache2 | create vhosts
+  template:
+    src=virtualhost.j2
+    dest=/etc/apache2/sites-available/{{ item.name }}
+  with_items: apache2_vhosts
+
+- name: apache2 | enable vhosts
+  command: /usr/sbin/a2ensite {{ item.name }} creates=/etc/apache2/sites-enabled/{{ item.name }}
+  with_items: apache2_vhosts
+  notify:
+  - apache-restart
+
+- name: apache2 | enable module
+  apache2_module: state=present name={{ item }}
+  with_items: 
+    - rewrite
+  notify: 
+  - apache-restart
+
+- name: add www-data to vagrand group
+  user: name=www-data groups=vagrant append=yes
+
+- name: apache2 | remove default virtualhost
+  file: path=/etc/apache2/sites-enabled/000-default state=absent
+  notify:
+  - apache-restart

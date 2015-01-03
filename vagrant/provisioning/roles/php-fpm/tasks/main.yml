@@ -1,0 +1,19 @@
+---
+
+- name: installer libapache2-mod-fastcgi
+  apt: pkg=libapache2-mod-fastcgi state=latest
+
+- name: on active les modules apaches
+  apache2_module: state=present name={{ item }}
+  with_items:
+    - actions
+    - alias
+    - fastcgi
+
+- name: on copie la conf de php5-fpm
+  copy: src=etc/apache2/conf.d/php5-fpm dest=/etc/apache2/conf.d/php5-fpm owner=root group=root mode=0644
+  notify: restart apache
+
+- name: on ajoute le pool php-fpm pour l'user vagrant
+  copy: src=etc/php5/fpm/pool.d/vagrant.conf dest=/etc/php5/fpm/pool.d/vagrant.conf owner=root group=root
+  notify: restart fpm

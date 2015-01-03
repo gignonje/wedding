@@ -1,0 +1,6 @@
+---
+mariadb_dev_password: ij86EEg9
+apache2_vhosts:
+  - name: "wedding"
+    servername: "wedding.dev"
+    documentrootdir: "wedding/web"

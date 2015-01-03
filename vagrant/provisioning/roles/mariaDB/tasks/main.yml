@@ -1,0 +1,33 @@
+---
+
+- name: install MariaDB dependencies
+  apt: pkg={{ item }}
+  with_items:
+    - python-software-properties
+    - python-apt
+
+- name: add key for MariaDB repo
+  apt_key: id=1BB943DB url=http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCBCB082A1BB943DB state=present
+
+- name: copy apt preference for MariaDB | fix problems with dotdeb
+  copy: src=mariadb.pref dest=/etc/apt/preferences.d/mariadb.pref
+
+- name: add repo for MariaDB
+  apt_repository: repo='deb http://ftp.igh.cnrs.fr/pub/mariadb/repo/5.5/debian wheezy main' update_cache=yes state=present
+
+- name: install MariaDB
+  apt: pkg={{ item }} state=installed force=yes
+  with_items:
+    - mariadb-server
+    - mariadb-client
+    - python-mysql.connector
+    - python-mysqldb
+  notify: Reload php-fpm
+
+- name: Update dev user of MariaDB
+  mysql_user: name=dev host={{ item }} password={{ mariadb_dev_password }} priv=*.*:ALL,GRANT
+  with_items:
+    - "{{ ansible_hostname }}"
+    - 127.0.0.1
+    - ::1
+    - localhost

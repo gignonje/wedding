@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.box = "ffuenf/debian-7.7.0-amd64"
+
+    config.vm.network :private_network, ip:    "192.168.33.42"
+    config.ssh.forward_agent = true
+
+    if defined? VagrantPlugins::HostManager
+        config.hostmanager.enabled = true
+        config.hostmanager.manage_host = true
+        config.hostmanager.aliases = %w(wedding.dev)
+    end
+
+    config.vm.synced_folder "..", "/var/www/wedding", id: "wedding",  :nfs => true
+
+    config.vm.provider :virtualbox do |v|
+        v.customize ["modifyvm", :id, "--memory", 1524]
+        v.customize ["modifyvm", :id, "--name", "wedding"]
+    end
+
+    config.vm.provision "ansible" do |ansible|
+        ansible.playbook = "provisioning/playbook.yml"
+    end
+end

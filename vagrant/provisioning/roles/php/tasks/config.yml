@@ -1,0 +1,21 @@
+---
+- name: config timezone
+  action: ini_file dest=/etc/php5/{{ item }}/php.ini section=Date option=date.timezone value=Europe/Paris
+  with_items:
+    - fpm
+    - cli
+
+- name: config display error
+  action: ini_file dest=/etc/php5/{{ item }}/php.ini section=PHP option=display_errors value=true
+  with_items:
+    - fpm
+    - cli
+
+- name: config error log
+  action: ini_file dest=/etc/php5/{{ item }}/php.ini section=PHP option=error_log value="/var/log/php_errors.log"
+  with_items:
+    - fpm
+    - cli
+
+- name: config xdebug max nesting level
+  lineinfile: dest=/etc/php5/mods-available/xdebug.ini regexp="max_nesting_level" line="xdebug.max_nesting_level=300" insertafter=EOF state=present
