@@ -1413,7 +1413,7 @@ span.error{color:red;text-align:left; font-size:11px; padding-bottom:15px; displ
 
 /*===== 7.2. Copyright =====*/
 #outercopyright{ padding:24px 0px 23px; font-size:12px;}
-#copyright-wrap{padding: 17px 0 31px;}
+#copyright-wrap{padding: 0 0 31px;}
 #copyright{ float:left; padding-top:10px;}
 #copyright a, #copyright a:visited{}
 

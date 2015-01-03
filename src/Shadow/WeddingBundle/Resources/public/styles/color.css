@@ -352,7 +352,7 @@ input.searchbutton:hover{ background-color:transparent; border:0px;}
 
 /*============================================== FOOTER SECTION ==============================================*/
 #outercopyright{ background:#786258 url(../images/pattern.png)}
-#copyright-wrap{color:#e6e0dd; border-top:1px solid #a4938b;}
+#copyright-wrap{color:#e6e0dd;}
 #outercopyright a{color:#fff;}
 #outercopyright a:hover{ color:#e6e0dd;}
 
