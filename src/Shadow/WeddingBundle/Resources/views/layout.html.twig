@@ -16,6 +16,7 @@
             'bundles/shadowwedding/styles/layout.css'
             'bundles/shadowwedding/styles/color.css'
             'bundles/shadowwedding/styles/flexslider.css'
+            'bundles/shadowwedding/styles/custom.css'
             filter='cssrewrite'
             %}
             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
@@ -30,21 +31,28 @@
         <div id="outerheader">
             <div id="headercontainer">
                 <div class="container">
-                    <header id="top">
-                        <div id="logo">
-                            <div id="logoimg">
-                                <a href="{{ path('homepage') }}" title="Mariage Frank et Claire" ><img src="{{ asset('bundles/shadowwedding/images/logo.png') }}" alt="" /></a>
+                    <header id="countdown">4 jours, 23 heures et 4 minutes</header>
+                    <div class="row">
+                        <div class="column three">
+                            <div id="logo">
+                                <div id="logoimg">
+                                    <a href="{{ path('homepage') }}" title="Mariage Frank et Claire" ><img src="{{ asset('bundles/shadowwedding/images/logo.png') }}" alt="" /></a>
+                                </div>
                             </div>
                         </div>
-                        <section id="navigation">
-                            <nav id="nav-wrap">
-                                {{ knp_menu_render('ShadowWeddingBundle:Builder:mainMenu') }}
+                        <div class="column nine">
+                            <header id="top">
+                                <section id="navigation">
+                                    <nav id="nav-wrap">
+                                        {{ knp_menu_render('ShadowWeddingBundle:Builder:mainMenu') }}
+                                        <div class="clear"></div>
+                                    </nav><!-- nav -->
+                                    <div class="clear"></div>
+                                </section>
                                 <div class="clear"></div>
-                            </nav><!-- nav -->
-                            <div class="clear"></div>
-                        </section>
-                        <div class="clear"></div>
-                    </header>
+                            </header>
+                        </div>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
