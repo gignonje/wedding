@@ -1,0 +1,12 @@
+#countdown {
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: #e6e0dd;
+	padding-top: 20px;
+}
+
+#topnav a { 
+	padding-left: 30px;
+	letter-spacing: 1px;
+}
