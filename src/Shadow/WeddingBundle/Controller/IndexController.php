@@ -16,4 +16,13 @@ class IndexController extends Controller
     {
         return [];
     }
+
+    /**
+     * @Route("/contact", name="contact")
+     * @Template()
+     */
+    public function contactAction()
+    {
+        return [];
+    }
 }

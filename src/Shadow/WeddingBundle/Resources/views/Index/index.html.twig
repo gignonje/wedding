@@ -1,9 +1,23 @@
 {% extends 'ShadowWeddingBundle::layout.html.twig' %}
 
 {% block content %}
-    Hello !
+<div class="row">
+    <div class="four columns">
+        <h2 class="widget-title">Frank</h2>
+        <img src="{{ asset('bundles/shadowwedding/images/Frank.png') }}" alt="" />
+    </div>
+    <div class="four columns">
+        <div class="text-block contact-info" style="padding-top: 90px; text-align: justify;">
+            <p><strong>Bienvenue</strong><p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nunc dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ut suscipit mauris, non egestas tortor. Maecenas vel sapien vehicula nunc dictum sagittis. Cras ornare, sem a tristique elementum, odio odio scelerisque tortor, at consequat ipsum magna tristique enim. Nunc interdum ante ut vestibulum euismod. Proin pellentesque ac lorem vitae mollis. Mauris accumsan fringilla diam sed tempor. Duis ut condimentum urna. Duis eu eros non odio eleifend fermentum. Fusce pretium ante euismod elementum malesuada.
+            </p>
+        </div>
+    </div>
+    <div class="four columns">
+        <h2 class="widget-title">Claire</h2>
+        <img src="{{ asset('bundles/shadowwedding/images/Claire.png') }}" alt="" />
+    </div>
+</div>
 {% endblock %}
 
 {% block page_title %}Les mariés{% endblock %}
-
-{% block title %}Mariage de Frank et Claire !{% endblock %}
