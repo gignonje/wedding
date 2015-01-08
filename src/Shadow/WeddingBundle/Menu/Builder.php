@@ -16,7 +16,7 @@ class Builder extends ContainerAware
         $menu->addChild('Le jour J', array('uri' => '#'));
         $menu->addChild('Infos pratiques', array('uri' => '#'));
         $menu->addChild('Le voyage de noces', array('uri' => '#'));
-        $menu->addChild('Contact', array('uri' => '#'));
+        $menu->addChild('Contact', array('route' => 'contact'));
         $menu->addChild('Contact2', array('uri' => '#'));
 
         return $menu;
