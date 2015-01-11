@@ -80,3 +80,10 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Shadow\WeddingBundle\Entity\User
+
+bazinga_geocoder: ~
+
+ivory_google_map:
+    map:
+        language: fr
+        width: 100%

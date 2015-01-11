@@ -1427,3 +1427,12 @@ span.error{color:red;text-align:left; font-size:11px; padding-bottom:15px; displ
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+
+#hostel_map img {
+  max-width: none;
+}
+
+#hostel_map label {
+  display: inline;
+  width: auto;
+}
