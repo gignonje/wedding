@@ -509,6 +509,7 @@ ul.sf-menu li li li.sfHover ul {
 
 .indentleft{overflow:hidden;}
 .center{text-align:center;}
+.justify{text-align:justify;}
 .nomargin{margin-right:0px!important;}
 .displayblock{display:block;}
 
@@ -1428,11 +1429,11 @@ span.error{color:red;text-align:left; font-size:11px; padding-bottom:15px; displ
   border-radius: 3px;
 }
 
-#hostel_map img {
+#map_plessis img, #map_pierrefonds img {
   max-width: none;
 }
 
-#hostel_map label {
+#map_plessis label, #map_pierrefonds label {
   display: inline;
   width: auto;
 }

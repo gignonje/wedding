@@ -39,38 +39,102 @@ class IndexController extends Controller
      */
     public function infoAction(Request $request)
     {
-        $map = $this->get('ivory_google_map.map');
-        $map->setAsync(true);
-        $map->setHtmlContainerId("hostel_map");
+        $mapPierrefonds = $this->get('ivory_google_map.map');
+        $mapPierrefonds->setAsync(false);
+        $mapPierrefonds->setHtmlContainerId("map_pierrefonds");
+        $mapPierrefonds->setAutoZoom(true);
+        $mapPierrefonds->setLanguage('fr');
+        $mapPierrefonds->setStylesheetOption('width', '100%');
+        $mapPierrefonds->setStylesheetOption('height', '550px');
+        $mapPierrefonds->setPrefixJavascriptVariable('map_pierrefonds_');
+        $mapPierrefonds->setMapOptions(
+            [
+                'disableDefaultUI'       => true,
+                'mapTypeId'              => 'hybrid',
+            ]
+        );
 
-        $address = "20 rue Tristan Bernard, 78340 Les Clayes sous Bois";
+        $mapPlessis = $this->get('ivory_google_map.map');
+        $mapPlessis->setAsync(false);
+        $mapPlessis->setHtmlContainerId("map_plessis");
+        $mapPlessis->setAutoZoom(true);
+        $mapPlessis->setLanguage('fr');
+        $mapPlessis->setStylesheetOption('width', '100%');
+        $mapPlessis->setStylesheetOption('height', '550px');
+        $mapPlessis->setPrefixJavascriptVariable('map_plessis_');
+        $mapPlessis->setMapOptions(
+            [
+                'disableDefaultUI'       => true,
+                'mapTypeId'              => 'hybrid',
+            ]
+        );
 
-        $geocoder = new Geocoder();
-        $adapter  = new CurlHttpAdapter();
-        $provider = new GoogleMapsProvider($adapter);
-        $geocoder->registerProvider($provider);
-
-        $result = $geocoder->geocode($address);
+        $internAddress = "1 rue Sabatier, 60350 Pierrefonds";
+        $receptionAddress = "8 rue Sabatier, 60350 Pierrefonds";
+        $townHallAddress = "76 Rue Edouard Meunier, 60150 Le Plessis-Brion";
+        $churchAddress = "19 rue de l’église, 60150 Le Plessis-Brion";
 
         try {
-            $map->setCenter($result->getLatitude(), $result->getLongitude());
-            $map->setMapOption('zoom', 16);
-
-            $marker = new Marker(new Coordinate($result->getLatitude(), $result->getLongitude()));
-            $marker->setInfoWindow(
+            $internMarker = new Marker(new Coordinate(49.346917, 2.976136));
+            $internMarker->setInfoWindow(
                 new InfoWindow(
-                    "<strong>Hôtel</strong><br /> $address"
+                    "<strong>Internat agricole de l’Institut Charles Quentin</strong><br />(En face du domaine des thermes)<br /><br /> $internAddress"
+                )
+            );
+            $internMarker->setIcon(
+                $this->container->get('templating.helper.assets')->getUrl(
+                    "bundles/shadowwedding/images/mapicons/bed.png"
                 )
             );
 
-            $map->addMarker($marker);
+            $receptionMarker = new Marker(new Coordinate(49.347099, 2.976179));
+            $receptionMarker->setInfoWindow(
+                new InfoWindow(
+                    "<strong>Domaine des Thermes de Pierrefonds</strong><br /><br /> $receptionAddress"
+                )
+            );
+            $receptionMarker->setIcon(
+                $this->container->get('templating.helper.assets')->getUrl(
+                    "bundles/shadowwedding/images/mapicons/wedding.png"
+                )
+            );
+
+            $townHallMarker = new Marker(new Coordinate(49.467385, 2.891195));
+            $townHallMarker->setInfoWindow(
+                new InfoWindow(
+                    "<strong>Mairie de le Plessis-Brion</strong><br /><br /> $townHallAddress"
+                )
+            );
+            $townHallMarker->setIcon(
+                $this->container->get('templating.helper.assets')->getUrl(
+                    "bundles/shadowwedding/images/mapicons/reception.png"
+                )
+            );
+
+            $churchMarker = new Marker(new Coordinate(49.466832, 2.893069));
+            $churchMarker->setInfoWindow(
+                new InfoWindow(
+                    "<strong>Église de le Plessis-Brion</strong><br /><br /> $churchAddress"
+                )
+            );
+            $churchMarker->setIcon(
+                $this->container->get('templating.helper.assets')->getUrl(
+                    "bundles/shadowwedding/images/mapicons/church.png"
+                )
+            );
+
+            $mapPierrefonds->addMarker($internMarker);
+            $mapPierrefonds->addMarker($receptionMarker);
+            $mapPlessis->addMarker($townHallMarker);
+            $mapPlessis->addMarker($churchMarker);
         } catch (\Exception $e) {
             $logger = $this->get('logger');
-            $logger->error('Map error: '.$e->getMessage());
+            $logger->error('Map error: ' . $e->getMessage());
         }
 
         return [
-            'map' => $map,
+            'map_pierrefonds' => $mapPierrefonds,
+            'map_plessis'     => $mapPlessis,
         ];
     }
 }

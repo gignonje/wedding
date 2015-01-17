@@ -2,8 +2,50 @@
 
 {% block content %}
 <div class="row">
-    <div class="twelve columns">
-        {{ google_map(map) }}
+    <div class="four columns">
+        <h2 class="center">Pierrefonds</h2>
+        {{ google_map(map_pierrefonds) }}
+    </div>
+    <div class="four columns">
+        <h2 class="center">Indications</h2>
+        <div class="text-block contact-info">
+            <p class="center">
+                <img src="{{ asset('bundles/shadowwedding/images/mapicons/reception.png') }}" alt="" />
+                <br />
+                Mairie de le Plessis-Brion<br />
+                76 Rue Edouard Meunier, 60150 Le Plessis-Brion
+            </p>
+
+            <p class="center">
+                <img src="{{ asset('bundles/shadowwedding/images/mapicons/church.png') }}" alt="" />
+                <br />
+                Église de le Plessis-Brion<br />
+                19 rue de l’église, 60150 Le Plessis-Brion
+            </p>
+
+            <p class="center">
+                <img src="{{ asset('bundles/shadowwedding/images/mapicons/wedding.png') }}" alt="" />
+                <br />
+                Domaine des Thermes de Pierrefonds<br />
+                8 rue Sabatier, 60350 Pierrefonds
+            </p>
+
+            <p class="center">
+                <img src="{{ asset('bundles/shadowwedding/images/mapicons/bed.png') }}" alt="" />
+                <br />
+                Internat agricole de l’Institut Charles Quentin<br />
+                1 rue Sabatier, 60350 Pierrefonds
+            </p>
+
+            <p class="justify">
+                Si vous cherchez un hébergement mais ne souhaitez pas séjourner à l'internat,
+                référez vous au <a href="http://www.pierrefonds-tourisme.net/CCCA-guide-hebergements.pdf">Guide de l'hébergement de Pierrefonds</a>.
+            </p>
+        </div>
+    </div>
+    <div class="four columns">
+        <h2 class="center">Le Plessis-Brion</h2>
+        {{ google_map(map_plessis) }}
     </div>
 </div>
 {% endblock %}
