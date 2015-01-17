@@ -49,7 +49,7 @@ class IndexController extends Controller
         $mapPierrefonds->setPrefixJavascriptVariable('map_pierrefonds_');
         $mapPierrefonds->setMapOptions(
             [
-                'disableDefaultUI'       => true,
+                'disableDefaultUI'       => false,
                 'mapTypeId'              => 'hybrid',
             ]
         );
@@ -64,7 +64,7 @@ class IndexController extends Controller
         $mapPlessis->setPrefixJavascriptVariable('map_plessis_');
         $mapPlessis->setMapOptions(
             [
-                'disableDefaultUI'       => true,
+                'disableDefaultUI'       => false,
                 'mapTypeId'              => 'hybrid',
             ]
         );
