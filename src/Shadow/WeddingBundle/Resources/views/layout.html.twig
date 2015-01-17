@@ -31,7 +31,7 @@
         <div id="outerheader">
             <div id="headercontainer">
                 <div class="container">
-                    <header id="countdown">4 jours, 23 heures et 4 minutes</header>
+                    <header id="countdown"></header>
                     <div class="row">
                         <div class="column three">
                             <div id="logo">
@@ -94,17 +94,23 @@
             '@ShadowWeddingBundle/Resources/public/js/tinynav.min.js'
             '@ShadowWeddingBundle/Resources/public/js/custom.js'
             '@ShadowWeddingBundle/Resources/public/js/jquery.flexslider-min.js'
+            '@ShadowWeddingBundle/Resources/public/js/jquery.plugin.js'
+            '@ShadowWeddingBundle/Resources/public/js/jquery.countdown.js'
+            '@ShadowWeddingBundle/Resources/public/js/jquery.countdown-fr.js'
             %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
 
-            <script>
+            <script type="text/javascript">
                 document.createElement('header');
                 document.createElement('section');
                 document.createElement('article');
                 document.createElement('aside');
                 document.createElement('nav');
                 document.createElement('footer');
+                $(function() {
+                    $('#countdown').countdown({until: new Date(2015, 6-1, 27, 16, 0, 0), layout: '{dn} {dl}, {hn} {hl}, {mn} {ml}, et {sn} {sl}'});
+                });
             </script>
         {% endblock %}
     {% endblock %}
