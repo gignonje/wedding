@@ -2,9 +2,6 @@
 
 namespace Shadow\WeddingBundle\Controller;
 
-use Geocoder\Geocoder;
-use Geocoder\HttpAdapter\CurlHttpAdapter;
-use Geocoder\Provider\GoogleMapsProvider;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Overlays\InfoWindow;
 use Ivory\GoogleMap\Overlays\Marker;
@@ -29,6 +26,15 @@ class IndexController extends Controller
      * @Template()
      */
     public function contactAction()
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/programme", name="program")
+     * @Template()
+     */
+    public function programAction()
     {
         return [];
     }
