@@ -11,7 +11,7 @@
 }
 
 #topnav a {
-    padding-left: 30px;
+    padding-left: 10px;
     letter-spacing: 1px;
 }
 
@@ -30,4 +30,18 @@
 .vcenter-row {
     display: flex;
     align-items: center;
+}
+
+h2 small {
+    font-size: 50%;
+}
+
+.low-height {
+    max-height:150px;
+    width:auto;
+}
+
+.thank-name {
+    text-align: center;
+    height: 80px;
 }

@@ -40,6 +40,15 @@ class IndexController extends Controller
     }
 
     /**
+     * @Route("/remerciements", name="thanks")
+     * @Template()
+     */
+    public function thanksAction()
+    {
+        return [];
+    }
+
+    /**
      * @Route("/info", name="info")
      * @Template()
      */
