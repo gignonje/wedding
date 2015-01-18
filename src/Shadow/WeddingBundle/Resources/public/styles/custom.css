@@ -3,7 +3,11 @@
     font-size: 15px;
     letter-spacing: 1px;
     color: #e6e0dd;
-    padding-top: 20px;
+    padding-top: 0px;
+}
+
+#logoimg {
+    padding-bottom: 15px;
 }
 
 #topnav a {
