@@ -60,7 +60,7 @@ class IndexController extends Controller
         $mapPierrefonds->setAutoZoom(true);
         $mapPierrefonds->setLanguage('fr');
         $mapPierrefonds->setStylesheetOption('width', '100%');
-        $mapPierrefonds->setStylesheetOption('height', '550px');
+        $mapPierrefonds->setStylesheetOption('height', '950px');
         $mapPierrefonds->setPrefixJavascriptVariable('map_pierrefonds_');
         $mapPierrefonds->setMapOptions(
             [
@@ -75,7 +75,7 @@ class IndexController extends Controller
         $mapPlessis->setAutoZoom(true);
         $mapPlessis->setLanguage('fr');
         $mapPlessis->setStylesheetOption('width', '100%');
-        $mapPlessis->setStylesheetOption('height', '550px');
+        $mapPlessis->setStylesheetOption('height', '950px');
         $mapPlessis->setPrefixJavascriptVariable('map_plessis_');
         $mapPlessis->setMapOptions(
             [
