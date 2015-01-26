@@ -58,9 +58,9 @@ h1, h2, h3, h4, h5, h6{color:#907c73;}
 /*============================================== SLIDER SECTION ==============================================*/
 #slider .camera_caption .slider-title, #slider .camera_caption .slider-title a, #slider .camera_caption .slider-subtitle{color:#907c73;}
 #slider .slider-desc{color:#907c73;}
-#slider {background:#f9f9f9; }
+#slider {background:#ffffff; }
 #slider .camera_wrap .camera_pag .camera_pag_ul{
-	border-bottom: 60px solid #f9f9f9;
+	border-bottom: 60px solid #ffffff;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	height: 0;

@@ -59,31 +59,33 @@
             </div>
         </div>
 
-        <div id="outerafterheader">
-            <div class="container">
-                <div class="row">
-                    <div id="afterheader" class="twelve columns">
-                        <div id="trapezoid">
-                            <h1 class="pagetitle">{% block page_title %}{% endblock %}</h1>
+        {% block afterheader %}
+            <div id="outerafterheader">
+                <div class="container">
+                    <div class="row">
+                        <div id="afterheader" class="twelve columns">
+                            <div id="trapezoid">
+                                <h1 class="pagetitle">{% block page_title %}{% endblock %}</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="header-line"></div>
             </div>
-            <div class="header-line"></div>
-        </div>
 
-        <div id="outermain">
-            <div class="container">
-                <div class="row">
-                    <section id="maincontent" class="twelve columns">
-                        <section id="content">
-                            {% block content %}{% endblock %}
+            <div id="outermain">
+                <div class="container">
+                    <div class="row">
+                        <section id="maincontent" class="twelve columns">
+                            <section id="content">
+                                {% block content %}{% endblock %}
+                            </section>
                         </section>
-                    </section>
-                    <div class="clear"></div>
+                        <div class="clear"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endblock %}
 
         {% block javascripts %}
             {% javascripts

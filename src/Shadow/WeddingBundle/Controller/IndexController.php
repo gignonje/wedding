@@ -49,6 +49,15 @@ class IndexController extends Controller
     }
 
     /**
+     * @Route("/voyage", name="journey")
+     * @Template()
+     */
+    public function journeyAction()
+    {
+        return [];
+    }
+
+    /**
      * @Route("/info", name="info")
      * @Template()
      */
