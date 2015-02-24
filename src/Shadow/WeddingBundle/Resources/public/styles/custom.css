@@ -45,3 +45,20 @@ h2 small {
     text-align: center;
     height: 80px;
 }
+
+.gilou {
+    display:block;
+    max-width:150px;
+    width: auto;
+    height: auto;
+    float:right;
+    bottom: 0px;
+    right: 33%;
+    position: fixed;
+}
+
+@media screen and (max-width: 980px){
+    .gilou {
+        display:none;
+    }
+}

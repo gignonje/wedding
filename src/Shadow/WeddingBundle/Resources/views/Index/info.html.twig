@@ -62,7 +62,7 @@
                     60350 Pierrefonds
                 </p>
 
-                <p style="font-size:120%;">
+                <p class="justify" style="font-size:120%;">
                     Si vous préférez le confort d’un hôtel ou bien que vous ayez peur du grand Gilou
                     (des années d’expériences en internat, sa spécialité : le lit en portefeuille),
                     nous vous proposons de cliquer sur le lien ci-dessous pour accéder à la brochure de l’office du
@@ -77,6 +77,11 @@
         {{ google_map(map_pierrefonds) }}
     </div>
 </div>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <img class="gilou" src="{{ asset('bundles/shadowwedding/images/gilou.png') }}" />
 {% endblock %}
 
 {% block page_title %}Infos pratiques{% endblock %}
